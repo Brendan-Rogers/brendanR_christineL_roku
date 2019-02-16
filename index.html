@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- link Vue.js -->
+	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+	<title>Roku Flashback</title>
+	<meta charset="utf-8">
+	<!-- link the Stylesheet -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<main id="app">
+
+<h2 v-on:click="loadVids">Load the video</h2>
+
+<p> {{ videoName }} </p>
+
+<p> {{ videoAuthor }} </p>
+
+<p> {{ videoPath }} </p>
+
+<p> {{ videoDuration }} </p>
+
+</main>
+
+<!-- link our main JS code -->
+<script src="js/main.js"></script>
+</body>
+</html>
