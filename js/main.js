@@ -1,7 +1,29 @@
 // SEAF
-(function(){ console.log("JS Initialized");
+//(function(){ console.log("JS Initialized");
+
+//Components
+import homeComponent from './components/homeComponent.js'; 
+//import signupComponent from './components/signupComponent.js';  
+
+const routes = [
+    { path: '/', redirect: { name: "home"} },
+    { path: "/home", name: "home", component: homeComponent },
+   // { path: "/signup", name: "signup", component: signupComponent }
+];
+
+const router = new VueRouter({
+
+    routes
+
+});
 
 const vm = new Vue({
+
+    router: router
+    
+}).$mount("#app");
+
+/*const vm = new Vue({
 
 	el : "#app",
 
@@ -34,3 +56,4 @@ const vm = new Vue({
 // END OF VUE APP
 
 }) ();
+*/

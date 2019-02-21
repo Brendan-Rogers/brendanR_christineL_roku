@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+#welcome {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#title {
+  color: white;
+  position: absolute;
+  z-index: 600;
+  text-align: center;
+  font-size: 4em;
+  width: 100%;
+  margin-top: 2.5em;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#heroImage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  position: relative;
+  background-color: #321eb3;
+}
+
+.overlay {
+  background-image: url(../images/lines.png);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 500;
+  mix-blend-mode: soft-light;
+}
+
+#bkg1 {
+  background-image: url(../images/1bkg.jpg);
+  background-size: cover;
+}
+
+#bkg2 {
+  background-image: url(../images/2bkg.png);
+  background-size: cover;
+}
+
+#bkg3 {
+  background-image: url(../images/3bkg.jpg);
+  background-size: cover;
+}
+
+#bkg4 {
+  background-image: url(../images/4bkg.jpg);
+  background-size: cover;
+}
+
+#bkg5 {
+  background-image: url(../images/5bkg.jpg);
+  background-size: cover;
+}
+
+#bkg6 {
+  background-image: url(../images/6bkg.jpg);
+  background-size: cover;
+}
+
+@media screen and (min-width: 600px) {
+  #loginBox {
+    width: 600px;
+  }
+}
+@media screen and (min-width: 900px) {
+  #heroImage {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: none;
+  }
+
+  #title {
+    font-size: 5em;
+  }
+}
+#mainHeader {
+  position: fixed;
+  z-index: 1000;
+}
+
+#logo {
+  position: absolute;
+  fill: white;
+  height: 60px;
+  width: 130px;
+  z-index: 1000;
+}
+
+footer {
+  background-color: #321eb3;
+  height: 15em;
+}
+
+/*# sourceMappingURL=master.css.map */

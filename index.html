@@ -1,18 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- link Vue.js -->
-	<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
 	<title>Roku Flashback</title>
 	<meta charset="utf-8">
 	<!-- link the Stylesheet -->
-	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/master.css">
+		<!-- link Vue.js -->
+		<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 </head>
 <body>
 
 <main id="app">
 
-<h2 v-on:click="loadVids">Load the video</h2>
+	<section id="welcome"> <!--hero image-->
+			<div id="title" class="scroll" data-rate="0.6">
+			<li>Music</li>
+			<li>Movies</li>
+			<li>TV</li>
+			</div>
+	
+		<div class="overlay"></div>
+		
+		<div id="heroImage">
+			<div id="bkg1" class="scroll" data-rate="1.5"></div>
+			<div id="bkg2" class="scroll" data-rate="-1.5"></div>
+			<div id="bkg3" class="scroll" data-rate="1.5"></div>
+			<div id="bkg4" class="scroll" data-rate="-1.5"></div>
+			<div id="bkg5" class="scroll" data-rate="1.5"></div>
+			<div id="bkg6" class="scroll" data-rate="-1.5"></div>
+		</div>
+	
+	</section>
+
+<!--<h2 v-on:click="loadVids">Load the video</h2>
 
 <p> {{ videoName }} </p>
 
@@ -20,11 +41,12 @@
 
 <p> {{ videoPath }} </p>
 
-<p> {{ videoDuration }} </p>
+<p> {{ videoDuration }} </p> -->
 
 </main>
 
 <!-- link our main JS code -->
-<script src="js/main.js"></script>
+<script type="module" src="js/main.js"></script>
+<script src="js/move.js"></script>
 </body>
 </html>

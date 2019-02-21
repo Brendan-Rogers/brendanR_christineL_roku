@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/Brendan-Rogers/brendanR_christineL_roku.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "brendan rogers",
   "license": "ISC",
   "devDependancies": {
