@@ -6,11 +6,11 @@
 	<meta charset="utf-8">
 	<!-- link the Stylesheet -->
 	<link rel="stylesheet" href="css/master.css">
+	<link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
 		<!-- link Vue.js -->
 		<script src="https://unpkg.com/vue"></script>
 	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.css"></script>
-
+	
 	</head>
 <body>
 
