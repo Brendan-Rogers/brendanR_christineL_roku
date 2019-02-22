@@ -3,12 +3,12 @@
 
 //Components
 import homeComponent from './components/homeComponent.js'; 
-//import signupComponent from './components/signupComponent.js';  
+import loginComponent from './components/loginComponent.js';  
 
 const routes = [
     { path: '/', redirect: { name: "home"} },
     { path: "/home", name: "home", component: homeComponent },
-   // { path: "/signup", name: "signup", component: signupComponent }
+    { path: "/login", name: "login", component: loginComponent }
 ];
 
 const router = new VueRouter({

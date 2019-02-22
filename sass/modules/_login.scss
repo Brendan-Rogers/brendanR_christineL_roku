@@ -1,0 +1,62 @@
+.loginTemplate{
+    display:grid;
+    justify-content: center;
+    height:100vh;
+    background-size:cover;
+    background-attachment: fixed;
+    position:relative;
+    background:$blue;
+}
+
+.signupTemplate{
+     display:grid;
+     justify-content: center;
+     height:100vh;
+     background-size:cover;
+     background-attachment: fixed;
+     position:relative;
+ }
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+ 
+ form{
+   
+     background-color:white;
+    padding:1em;
+     text-align:center;
+      margin:1em;
+      align-self: center;
+       justify-self: center;
+       position: absolute;
+    
+ }
+ 
+ input{
+     padding:.5em;
+     background-color:#efefef;
+     //width:95%;
+     border-style:none;
+     margin-bottom:2em;
+
+ 
+ }
+ 
+
+
+
+
+
+input , .form-control, .redButton{
+    padding:.5em;
+ 
+    background-color:#efefef;
+    width:95%;
+    border-style:none;
+    margin-bottom:2em;
+
+}
+

@@ -10,11 +10,15 @@
     position: absolute;
     z-index:600;
     text-align: center;
-    font-size:4em;
-   width:100%;
-    margin-top:2.5em;
+     width:100%;
+    margin-top:9%;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.title{
+    font-size:6em;
+ 
 }
 
 #heroImage {
@@ -80,7 +84,7 @@
     
        
         }
-        #title{
-            font-size: 5em;
+        .title{
+            font-size: 8em;
         }
     }
