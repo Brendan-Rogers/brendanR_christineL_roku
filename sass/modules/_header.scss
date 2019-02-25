@@ -8,6 +8,42 @@
     height:60px;
     width:130px;
     z-index:1000;
+    padding:0.3em;
 
 
 }
+
+//nav
+nav{
+    width: 100vw;
+ 
+}
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+  
+  }
+  
+  li {
+    float:right;
+    margin-right:5%;
+  }
+  
+  li a {
+    display: block;
+    font-weight:600;
+    color: white;
+    text-align: center;
+    padding: 18px 16px;
+    text-decoration: none;
+  
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  li a:hover {
+    background-color:$blue;
+  }

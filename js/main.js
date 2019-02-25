@@ -2,25 +2,27 @@
 //(function(){ console.log("JS Initialized");
 
 //Components
-import homeComponent from './components/homeComponent.js'; 
-import loginComponent from './components/loginComponent.js';  
+import homeComponent from './components/homeComponent.js';
+import loginComponent from './components/loginComponent.js';
+import selectComponent from './components/selectComponent.js';
 
 const routes = [
-    { path: '/', redirect: { name: "home"} },
-    { path: "/home", name: "home", component: homeComponent },
-    { path: "/login", name: "login", component: loginComponent }
+	{ path: '/', redirect: { name: "home" } },
+	{ path: "/home", name: "home", component: homeComponent },
+	{ path: "/login", name: "login", component: loginComponent },
+	{ path: "/selectAccount", name: "select", component: selectComponent }
 ];
 
 const router = new VueRouter({
 
-    routes
+	routes
 
 });
 
 const vm = new Vue({
 
-    router: router
-    
+	router: router
+
 }).$mount("#app");
 
 /*const vm = new Vue({
@@ -49,7 +51,7 @@ const vm = new Vue({
 				this.videoDuration = data[0].video_duration;
 			});
 		}
-		
+
 	}
 
 });

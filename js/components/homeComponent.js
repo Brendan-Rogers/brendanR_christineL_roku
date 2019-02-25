@@ -1,8 +1,8 @@
 export default {
     template: `
    
-<div>
-	<section id="welcome" class="fade"> <!--hero image-->
+<div class="centered">
+	
     <div id="title" class="scroll" data-rate="0.6">
     <li class="title">Music</li>
     <li class="title">Movies</li>
@@ -14,18 +14,9 @@ export default {
     </div>
  
 
-<div class="overlay"></div>
 
-<div id="heroImage">
-    <div id="bkg1" class="scroll" data-rate="1.5"></div>
-    <div id="bkg2" class="scroll" data-rate="-1.5"></div>
-    <div id="bkg3" class="scroll" data-rate="1.5"></div>
-    <div id="bkg4" class="scroll" data-rate="-1.5"></div>
-    <div id="bkg5" class="scroll" data-rate="1.5"></div>
-    <div id="bkg6" class="scroll" data-rate="-1.5"></div>
-</div>
 
-</section>
+
 </div>
 
 `

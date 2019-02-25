@@ -2,7 +2,7 @@ export default {
 	template: `
 
        
-    <div class="loginTemplate">
+    <div class="loginTemplate centered">
 
 
     	<?php
@@ -19,8 +19,8 @@ export default {
     		<input type="password" name="password" placeholder="Password" required><br><br>
 
 
-               <router-link :to="{name: 'home'}">
-                 <button id="loginButton" class="foo bar mainButton">login</button>
+               <router-link :to="{name: 'select'}">
+                 <button id="loginButton" class="mainButton">login</button>
                </router-link>
 
     		</form>

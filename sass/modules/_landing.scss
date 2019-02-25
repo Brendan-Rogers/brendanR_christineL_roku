@@ -1,3 +1,4 @@
+
 #welcome{
     height:100vh;
     position:relative;
@@ -11,13 +12,20 @@
     z-index:600;
     text-align: center;
      width:100%;
-    margin-top:9%;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+    margin-top:-5em !important;
+    margin:0 auto;
+    
 }
 
+#title li {
+ float:left;
+}
+
+
 .title{
-    font-size:6em;
+    font-size:4em;
  
 }
 
@@ -28,6 +36,7 @@
    height:100%;
    position:relative;
    background-color:$blue;
+
   
 } 
 .overlay{
@@ -84,7 +93,11 @@
     
        
         }
+
+        #title{
+            margin-top:5%;
+        }
         .title{
-            font-size: 8em;
+            font-size: 6em;
         }
     }

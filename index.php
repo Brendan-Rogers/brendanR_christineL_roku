@@ -18,20 +18,40 @@
           <div id="logo" class="logo">
               <img src="images/roku.svg">
 		  </div>
+  <nav> 
+  <ul>
+    <li><a href="music.html">Music</a></li>
+    <li><a href="movies">Movies</a></li>
+    <li><a href="tv.html">TV</a></li>
+
+  </ul>
+</nav>
 </header>
 
 
-<main id="app">
+<main class="container">
+<section id="welcome"> <!--hero image-->
 
 
-         <div>
+         <div id="app">
 		 <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
 			<router-view/>
-        </transition>
+		</transition>
+		
           
-        </div>
+		</div>
+		<div class="overlay"></div>
 
+<div id="heroImage">
+    <div id="bkg1" class="scroll" data-rate="1.5"></div>
+    <div id="bkg2" class="scroll" data-rate="-1.5"></div>
+    <div id="bkg3" class="scroll" data-rate="1.5"></div>
+    <div id="bkg4" class="scroll" data-rate="-1.5"></div>
+    <div id="bkg5" class="scroll" data-rate="1.5"></div>
+    <div id="bkg6" class="scroll" data-rate="-1.5"></div>
+</div>
 
+</section>
 <!--<h2 v-on:click="loadVids">Load the video</h2>
 
 <p> {{ videoName }} </p>
