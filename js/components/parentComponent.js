@@ -8,7 +8,7 @@ export default {
             <div class="movieCover">
       
                 <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia"
-                :src="'images/video/' + media.movies_cover" alt="media thumb" @mouseover="switchActiveMedia(media)" @click="showLightBox"
+                :src="'images/video/' + media.movies_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
                 class="vidImage">
                 <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
                 
