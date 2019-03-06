@@ -16,10 +16,16 @@ export default {
     	
 
           
-                 <a href="parent.php" class="accountButton">parent</a>
+        <router-link :to="{name: 'parentDashboard'}">
+        <button id="loginButton" class="mainButton">parent</button>
+        </router-link>
+
+        <router-link :to="{name: 'dashboard'}">
+        <button id="loginButton" class="mainButton">child</button>
+        </router-link>
             
 
-                 <a href="child.php" class="accountButton">child</a>
+                 
      
     		</form>
         </div>

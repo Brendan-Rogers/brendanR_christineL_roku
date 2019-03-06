@@ -58,13 +58,23 @@ body {
 
 .overlay {
   background-image: url(../images/lines.png);
-  height: 100%;
-  width: 100%;
   position: absolute;
-  z-index: 500;
+  z-index: 600;
   mix-blend-mode: soft-light;
+  height: 3000px;
+  width: 100%;
+  animation: moveUp 40s linear infinite;
+  margin: 0 auto;
 }
 
+@keyframes moveUp {
+  0% {
+    transform: translate3d(0, 1000, 0);
+  }
+  100% {
+    transform: translate3d(0, -1000px, 0);
+  }
+}
 #bkg1 {
   background-image: url(../images/1bkg.jpg);
   background-size: cover;
@@ -114,9 +124,10 @@ body {
     font-size: 6em;
   }
 }
-#mainHeader {
+header {
   position: fixed;
   z-index: 1000;
+  background: #321eb3;
 }
 
 #logo {
@@ -161,6 +172,7 @@ li a:hover {
 footer {
   background-color: #321eb3;
   height: 15em;
+  display: block;
 }
 
 a:focus,
@@ -215,6 +227,64 @@ input {
 .mainButton:hover {
   background: #321eb3;
   color: white;
+}
+
+.dashboard {
+  margin: 1em 1em 0 1em;
+  height: 100%;
+}
+
+.movieCover {
+  background: #321eb3;
+  transition: all 0.2s ease-in-out;
+}
+
+.movieCover:hover {
+  z-index: 100;
+}
+
+.vidImage {
+  mix-blend-mode: lighten;
+  transition: all 0.2s ease-in-out;
+  transition: 500ms;
+  height: 250px;
+}
+
+.vidImage:hover {
+  mix-blend-mode: inherit;
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 100;
+}
+
+.currentInfoBox {
+  position: relative;
+}
+
+.movieSection {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  overflow: hidden;
+  margin-bottom: 5em;
+}
+.movieSection .movieCover {
+  flex: 0 0 auto;
+}
+
+.genreTitle, .mediaTitle {
+  color: white;
+}
+
+@media screen and (min-width: 600px) {
+  .dashboard {
+    margin: 5%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .dashboard {
+    margin: 0 6em 0 6m;
+  }
 }
 
 /*# sourceMappingURL=master.css.map */

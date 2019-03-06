@@ -40,21 +40,34 @@
   
 } 
 .overlay{
-    background-image:url(../images/lines.png);
-    height:100%;
-    width:100%;
+
+    background-image:url(../images/lines.png); //repeat dosnt want to work, probs just make a line
     position: absolute;
-    z-index:500;
+    z-index:600;
     mix-blend-mode:soft-light;
-   
-}
+    height: 3000px;//why not perfect
+    width:100%;
+  //  height:100%;
+    animation:moveUp 40s linear infinite;
 
+    margin: 0 auto;
 
+  }
+  @keyframes moveUp{
+  	0%{
+  		transform: translate3d(0, 1000, 0);
+  	}
+  	100%{
+  		transform: translate3d(0, -1000px,0);
+  	}
+  }
+
+ 
 
 #bkg1{
     background-image: url(../images/1bkg.jpg);
     background-size:cover;
- 
+
 
 }
 

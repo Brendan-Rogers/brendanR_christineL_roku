@@ -12,7 +12,6 @@ export default {
     <button class="mainButton foo bar" id="loginButton">Login</button>
     </router-link>
     </div>
- 
 
 
 
@@ -21,3 +20,5 @@ export default {
 
 `
 }
+
+

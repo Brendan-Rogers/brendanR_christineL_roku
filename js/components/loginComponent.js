@@ -24,6 +24,8 @@ export default {
                </router-link>
 
     		</form>
-        </div>
+				</div>
+
+
     `
 }
