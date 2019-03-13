@@ -2,7 +2,11 @@
 
 .dashboard{
     margin:1em 1em 0 1em;
-    height:100%;
+    //height:100%;
+    display:grid;
+    grid-template-rows:5em 1fr 1fr 1fr;
+ 
+  
 }
 
 
@@ -14,16 +18,17 @@
     height:280px;
     transition: all .2s ease-in-out; 
     flex:0 0 auto;
+ 
   }
 
 //genre section container
 
 .movieSection{
-     margin-top:14%; ///just for noww
+   
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-    //overflow:hidden;
+    overflow:hidden;
 
 
 
@@ -41,7 +46,7 @@
     transition: all .2s ease-in-out; 
     transition: 500ms;
     height:280px;
-    overflow: hidden;
+    //overflow: hidden;
 }
 .vidImage:hover {
     mix-blend-mode:inherit;  
@@ -52,14 +57,6 @@
 }
 
 //buttons
-
-.slideButton {
-    position: absolute;
-}
-
-#buttonNext{
-   
-}
 
 
 
@@ -79,6 +76,16 @@
    margin-top:1em;
 }
 
+.mediaDetails{
+    color:white;
+}
+
+.mediaGenres{
+    background:$blue;
+    display:grid;
+    grid-row:1;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
 
 
 @media screen and (min-width:800px){
