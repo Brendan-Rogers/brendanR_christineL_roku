@@ -3,6 +3,18 @@ export default {
 
     <section class="dashboard">
 
+    <div class="side-nav">
+        <ul class="media-type">
+            <li v-for="media in mediaTypes" :data-type="media.description" @click="loadMedia(null, media.description)">
+                <span>
+                    <i v-bind:class="[media.iconClass]"></i>
+                </span>
+                
+                <span class="d-none d-md-block">{{ media.description }}</span>
+            </li>
+        </ul>
+    </div>
+
         <div class="movieSection">
      
             <div class="movieContent">
