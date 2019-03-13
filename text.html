@@ -1,77 +1,74 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-
-    <title>Roku Flashback</title>
-    <meta charset="utf-8">
-    <!-- link the Stylesheet -->
-    <link rel="stylesheet" href="../css/master.css">
-    <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
-    <!-- link Vue.js -->
-    <script src="https://unpkg.com/vue"></script>
-    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-
-</head>
-
-<body>
-
-    <div class="glider-contain multiple">
-        <button class="glider-prev">«</button>
-        <h2>Action</h2>
-
-        <div class="glider">
+<section class="dashboard">
+    <ul v-if="activeMediaType == 'video'" class="mediaGenres">
+        <li>
+            <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
+        </li>
+        <li>
+            <a href="comedy" @click.prevent="loadMedia('comedy', null)">Comedy</a>
+        </li>
+        <li>
+            <a href="family" @click.prevent="loadMedia('family', null)">Family</a>
+        </li>
+        <li>
+            <a href="horror" @click.prevent="loadMedia('fantasy', null)">Fantasy</a>
+        </li>
+        <li>
+            <a href="horror" @click.prevent="loadMedia(null, null)">All</a>
+        </li>
+    </ul>
 
 
+    <div v-if="activeMediaType == 'audio' && retrievedMedia.length > 0">
 
+        <ul>
+            <li>
+                <a href="action" @click.prevent="loadMedia('alternative', null)">Alternative</a>
+            </li>
+            <li>
+                <a href="comedy" @click.prevent="loadMedia('blues', null)">Blues</a>
+            </li>
+            <li>
+                <a href="family" @click.prevent="loadMedia('rock', null)">Rock</a>
+            </li>
+            <li>
+                <a href="horror" @click.prevent="loadMedia('soundtrack', null)">Soundtracks</a>
+            </li>
+            <li>
+                <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
+            </li>
+        </ul>
 
+    </div>
 
-            <div class="movieCover">
-                <img src="images/arrival.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/silver.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/deadpool.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/gravity.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/guardians.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/force.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/force.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/force.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/force.jpg" class="vidImage">
-            </div>
-            <div class="movieCover">
-                <img src="images/force.jpg" class="vidImage">
-            </div>
+    <div v-if="activeMediaType == 'television' && retrievedMedia.length > 0">
 
+    </div>
 
+    <div class="movieSection">
 
+        <div class="movieContent">
+
+            <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia"
+                :src="'images/video/' + media.movies_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
+                class="vidImage">
+
+            <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia"
+                :src="'images/audio/' + media.audio_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
+                class="vidImage">
 
         </div>
 
-        </main>
+    </div>
+
+    <div v-if="activeMediaType == 'video' && retrievedMedia.length > 0">
+
+        <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
+        <p class="mediaDetails" v-html="currentMediaDetails.movies_storyline"></p>
+        <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
+        <span class="media-year">Released in {{currentMediaDetails.movies_year}}</span>
+
+        <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="fs-video"></video>
+    </div>
 
 
-        <footer></footer>
-
-        <!-- link our main JS code -->
-        <script type="module" src="js/main.js"></script>
-        <script type="module" src="js/move.js"></script>
-        <script src="js/glider.min.js"></script>
-        <script src="js/glider.js"></script>
-</body>
-
-</html>
+</section>

@@ -35,11 +35,15 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
    height:100%;
-   //position:relative;
    background-color:$blue;
+   z-index:500;
 
   
 } 
+
+.landingArea{
+
+}
 .overlay{
 
     background-image:url(../images/lines.png); //repeat dosnt want to work, probs just make a line

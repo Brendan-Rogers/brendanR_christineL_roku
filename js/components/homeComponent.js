@@ -1,6 +1,6 @@
 export default {
     template: `
-   
+   <div class="landingArea">
 <div class="centered">
 	
     <div id="title" class="scroll" data-rate="0.6">
@@ -16,8 +16,13 @@ export default {
 
 
 
+
+
+
 </div>
 
+
+<div>
 `
 }
 

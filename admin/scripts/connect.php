@@ -1,7 +1,7 @@
 <?php 
     $db_dsn = array( 
         'host' => 'localhost',
-        'dbname' => 'db_movies_3',
+        'dbname' => 'audiodb',
         'charset' => 'utf8'
     );
 
@@ -10,7 +10,7 @@
     //This is the DB credentials
 
     $db_user = 'root';
-    $db_pass = 'root';
+    $db_pass = '';
 
     try{
         $pdo = new PDO($dsn, $db_user, $db_pass);
