@@ -14,7 +14,7 @@ if (isset($_GET['media'])) {
 
 if(isset($_GET['filter'])){
 
-    //$tbl = 'tbl_movies';
+    $tbl = 'tbl_movies';
     $tbl2 = 'tbl_genre';
     $tbl3 = 'tbl_mov_genre';
     $col = 'movies_id';

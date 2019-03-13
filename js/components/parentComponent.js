@@ -2,22 +2,77 @@ export default {
     template: `
 
     <section class="dashboard">
-         <div class="movieSection">
+
+        <div class="movieSection">
      
             <div class="movieContent">
+
                 <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia"
                 :src="'images/video/' + media.movies_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
                 class="vidImage">
-           
-             
+
+                <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia"
+                :src="'images/audio/' + media.audio_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
+                class="vidImage">
+
             </div>
           
         </div>
 
-        <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
+        <div v-if="activeMediaType == 'video' && retrievedMedia.length > 0">
 
-    
+            <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
+            <p class="media-details" v-html="currentMediaDetails.movies_storyline"></p>
+            <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
+            <span class="media-year">Released in {{currentMediaDetails.movies_year}}</span>
 
+            <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer" class="fs-video"></video>
+
+            <ul v-if="activeMediaType == 'video'" class="media-genres">
+                <li>
+                    <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
+                </li>
+                <li>
+                    <a href="comedy" @click.prevent="loadMedia('comedy', null)">Comedy</a>
+                </li>
+                <li>
+                    <a href="family" @click.prevent="loadMedia('family', null)">Family</a>
+                </li>
+                <li>
+                    <a href="horror" @click.prevent="loadMedia('fantasy', null)">Fantasy</a>
+                </li>
+                <li>
+                    <a href="horror" @click.prevent="loadMedia(null, null)">All</a>
+                </li>
+            </ul>
+
+        </div>
+        
+        <div v-if="activeMediaType == 'audio' && retrievedMedia.length > 0">
+
+            <ul>
+                <li>
+                    <a href="action" @click.prevent="loadMedia('alternative', null)">Alternative</a>
+                </li>
+                <li>
+                    <a href="comedy" @click.prevent="loadMedia('blues', null)">Blues</a>
+                </li>
+                <li>
+                    <a href="family" @click.prevent="loadMedia('rock', null)">Rock</a>
+                </li>
+                <li>
+                    <a href="horror" @click.prevent="loadMedia('soundtrack', null)">Soundtracks</a>
+                </li>
+                <li>
+                    <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
+                </li>
+            </ul>
+
+        </div>
+
+        <div v-if="activeMediaType == 'television' && retrievedMedia.length > 0">
+
+        </div>
 
    </section>
 
@@ -30,7 +85,7 @@ export default {
 
         return {
             // set the default to video -> will get a random video via query on create
-            activeMediaType: "video",
+            activeMediaType: "audio",
 
             // push first (or random) media object here (selected / filtered on create)
             currentMediaDetails: {
