@@ -1,6 +1,19 @@
 export default {
     template: `
     <section class="dashboard">
+
+    <div class="side-nav">
+        <ul class="media-type">
+            <li v-for="media in mediaTypes" :data-type="media.description" @click="loadMedia(null, media.description)">
+                <span>
+                    <i v-bind:class="[media.iconClass]"></i>
+                </span>
+                
+                <span class="d-none d-md-block">{{ media.description }}</span>
+            </li>
+        </ul>
+    </div>
+
     <ul v-if="activeMediaType == 'video'" class="mediaGenres">
         <li>
             <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
@@ -51,6 +64,7 @@ export default {
         <div class="movieContent">
 
             <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia"
+
                 :src="'images/video/' + media.movies_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
                 class="vidImage">
 
