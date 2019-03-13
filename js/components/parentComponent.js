@@ -2,33 +2,26 @@ export default {
     template: `
 
     <section class="dashboard">
-
-    <h2 class="genreTitle">Action</h2>
-       <div class="movieSection">
-            <div class="movieCover">
-      
+         <div class="movieSection">
+     
+            <div class="movieContent">
                 <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia"
                 :src="'images/video/' + media.movies_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
                 class="vidImage">
-                <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
-                
+           
+             
             </div>
-            
-       </div>
+          
+        </div>
 
-       
-    <h2 class="genreTitle">Action</h2>
-    <div class="movieSection">
-         <div class="movieCover">
-             <img v-if="activeMediaType == 'video'" v-for="media in retrievedMedia"
-             :src="'images/video/' + media.movies_cover" alt="media thumb" @click="switchActiveMedia(media)"
-             class="vidImage">
-         </div>
-    </div>
+        <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
+
+    
+
+
+   </section>
 
      `,
-
-
 
 
 

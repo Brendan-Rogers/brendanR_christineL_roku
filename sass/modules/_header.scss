@@ -49,3 +49,12 @@ ul {
   li a:hover {
     background-color:$blue;
   }
+
+
+
+
+  @media screen and (min-width:900px){
+    .dashboard{
+        margin-left:6em;
+    }
+    }

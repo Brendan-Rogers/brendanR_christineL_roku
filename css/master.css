@@ -8,7 +8,7 @@
 body {
   list-style-type: none;
   font-family: "Open Sans", sans-serif;
-  background: #321eb3;
+  background: black;
 }
 
 .centered {
@@ -52,7 +52,6 @@ body {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   height: 100%;
-  position: relative;
   background-color: #321eb3;
 }
 
@@ -169,10 +168,33 @@ li a:hover {
   background-color: #321eb3;
 }
 
+@media screen and (min-width: 900px) {
+  .dashboard {
+    margin-left: 6em;
+  }
+}
 footer {
   background-color: #321eb3;
-  height: 15em;
-  display: block;
+  display: grid;
+  padding: 3%;
+}
+
+#socialMedia {
+  font-size: 1.5em;
+}
+
+#socialMedia {
+  grid-column: 2;
+  align-self: center;
+}
+
+#footerMenu {
+  grid-column: 1/2;
+  grid-row: 1;
+  font-size: 0.8em;
+}
+#footerMenu ul li {
+  float: left;
 }
 
 a:focus,
@@ -234,20 +256,32 @@ input {
   height: 100%;
 }
 
-.movieCover {
+.movieContent {
+  overflow: hidden;
   background: #321eb3;
+  height: 280px;
   transition: all 0.2s ease-in-out;
+  flex: 0 0 auto;
 }
 
-.movieCover:hover {
-  z-index: 100;
+.movieSection {
+  margin-top: 14%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.movieSection::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 .vidImage {
   mix-blend-mode: lighten;
   transition: all 0.2s ease-in-out;
   transition: 500ms;
-  height: 250px;
+  height: 280px;
+  overflow: hidden;
 }
 
 .vidImage:hover {
@@ -257,33 +291,29 @@ input {
   z-index: 100;
 }
 
-.currentInfoBox {
-  position: relative;
-}
-
-.movieSection {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  overflow: hidden;
-  margin-bottom: 5em;
-}
-.movieSection .movieCover {
-  flex: 0 0 auto;
+.slideButton {
+  position: absolute;
 }
 
 .genreTitle, .mediaTitle {
   color: white;
 }
 
-@media screen and (min-width: 600px) {
+.mediaTitle {
+  margin-bottom: 3em;
+  grid-column: 2;
+  justify-self: center;
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 800px) {
   .dashboard {
-    margin: 5%;
+    margin: 2em;
   }
 }
 @media screen and (min-width: 900px) {
   .dashboard {
-    margin: 0 6em 0 6m;
+    margin: 0 6em 0 6em;
   }
 }
 

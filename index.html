@@ -8,6 +8,8 @@
   <!-- link the Stylesheet -->
   <link rel="stylesheet" href="css/master.css">
   <link href="https://cdn.jsdelivr.net/npm/animate.css@3.5.1" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <!-- link Vue.js -->
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
@@ -22,9 +24,8 @@
       </div>
       <nav>
         <ul>
-          <li><a href="music.html">Music</a></li>
-          <li><a href="movies">Movies</a></li>
-          <li><a href="tv.html">TV</a></li>
+          <li v-on:click="logout()"><a href="#">Log Out</a></li>
+
 
         </ul>
       </nav>
@@ -45,7 +46,9 @@
 
 
 
-      <!--background image-->
+      <!--background image look up how to hide this with vueeee on dashboard pages-->
+
+
       <!---<div class="overlay"></div>
       <div id="heroImage">
         <div id="bkg1" class="scroll" data-rate="1.5"></div>
@@ -61,14 +64,32 @@
 
   </div>
   </div>
-  <footer></footer>
+  <footer>
+    <div id="socialMedia">
+      <ul>
+        <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
+        <li><a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+        <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i></a></li>
+      </ul>
+    </div>
+
+
+    <div id="footerMenu">
+      <ul>
+        <li><a href="#">Legal Notice</a></li>
+        <li><a href="#">Terms of Use</a></li>
+        <li><a href="#">Privacy</a></li>
+        <li><a href="#">Cookie Preference</a></li>
+      </ul>
+    </div>
+
+
+  </footer>
   </div>
   <!-- link our main JS code -->
-
-  <script type="module" src="js/move.js"></script>
-  <script src="js/glider.min.js"></script>
-  <script src="js/glider.js"></script>
   <script type="module" src="js/main.js"></script>
+  <script type="module" src="js/move.js"></script>
+
 </body>
 
 </html>
