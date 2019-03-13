@@ -1,0 +1,27 @@
+footer{
+    background-color: $blue;
+    display:grid;
+    padding:3%
+ 
+}    
+
+#socialMedia{
+    font-size:1.5em;
+}
+
+#socialMedia {
+    grid-column: 2;
+    align-self: center;
+    
+}
+
+#footerMenu {
+    grid-column: 1 / 2;
+    grid-row:1;
+    font-size:0.8em; 
+    
+ul li{
+    float:left;
+}
+    
+}

@@ -1,0 +1,25 @@
+.mainButton {
+    width:300px;
+    cursor: pointer;
+    padding:15px 45px;
+    border-radius:10px;
+    border:none;
+    color:$blue;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing:border-box;
+    transition:0.5s;
+    font-size:1.2em;
+    background-color:rgba(255, 255, 255, 0.8);
+    position:relative
+
+}
+
+
+
+
+.mainButton:hover{
+background: $blue;
+    color:white;
+}
+

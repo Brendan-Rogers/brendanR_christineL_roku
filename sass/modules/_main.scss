@@ -1,0 +1,24 @@
+
+* {
+    margin:0;
+    padding:0;
+}
+
+body{
+    list-style-type:none;
+    font-family: $mainFont;
+    //margin:0 auto;
+    background:black;
+}
+
+.centered{
+    width:400px;
+    height:600px;
+        z-index:900;
+       position: absolute;
+       left:50%;
+       top:40%;
+       margin:-100px 0 0 -200px;
+
+}
+

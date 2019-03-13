@@ -1,0 +1,94 @@
+///to be dashboard component
+
+.dashboard{
+    margin:1em 1em 0 1em;
+    height:100%;
+}
+
+
+
+.movieContent{
+  
+    overflow: hidden;
+    background:$blue;
+    height:280px;
+    transition: all .2s ease-in-out; 
+    flex:0 0 auto;
+  }
+
+//genre section container
+
+.movieSection{
+     margin-top:14%; ///just for noww
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    //overflow:hidden;
+
+
+
+ 
+  }
+  .movieSection::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; 
+    }
+ 
+
+.vidImage{
+
+    mix-blend-mode: lighten;
+    transition: all .2s ease-in-out; 
+    transition: 500ms;
+    height:280px;
+    overflow: hidden;
+}
+.vidImage:hover {
+    mix-blend-mode:inherit;  
+    cursor: pointer;
+    transform: scale(1.1);
+    z-index:100;
+  
+}
+
+//buttons
+
+.slideButton {
+    position: absolute;
+}
+
+#buttonNext{
+   
+}
+
+
+
+//text
+
+.genreTitle, .mediaTitle{
+    color:white;
+   
+
+}
+
+.mediaTitle{
+    margin-bottom:3em;
+   grid-column: 2;
+   justify-self:center;
+   //align-self:center;
+   margin-top:1em;
+}
+
+
+
+@media screen and (min-width:800px){
+    .dashboard{
+        margin:2em;
+    }
+    }
+
+    @media screen and (min-width:900px){
+        .dashboard{
+            margin:0 6em 0 6em;
+        }
+        }

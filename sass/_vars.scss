@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,700');
+@import url('https://fonts.googleapis.com/css?family=Cabin');
+$mainFont: 'Open Sans', sans-serif;
+//$mainFont: 'Cabin', sans-serif;
+
+$blue: #321eb3;
+$pink: #e951c8;
+
+@mixin vertical-align($position: relative) {
+    position: $position;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}

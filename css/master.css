@@ -1,0 +1,320 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+@import url("https://fonts.googleapis.com/css?family=Cabin");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+  background: black;
+}
+
+.centered {
+  width: 400px;
+  height: 600px;
+  z-index: 900;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin: -100px 0 0 -200px;
+}
+
+#welcome {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+#title {
+  color: white;
+  position: absolute;
+  z-index: 600;
+  text-align: center;
+  width: 100%;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-top: -5em !important;
+  margin: 0 auto;
+}
+
+#title li {
+  float: left;
+}
+
+.title {
+  font-size: 4em;
+}
+
+#heroImage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+  background-color: #321eb3;
+}
+
+.overlay {
+  background-image: url(../images/lines.png);
+  position: absolute;
+  z-index: 600;
+  mix-blend-mode: soft-light;
+  height: 3000px;
+  width: 100%;
+  animation: moveUp 40s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes moveUp {
+  0% {
+    transform: translate3d(0, 1000, 0);
+  }
+  100% {
+    transform: translate3d(0, -1000px, 0);
+  }
+}
+#bkg1 {
+  background-image: url(../images/1bkg.jpg);
+  background-size: cover;
+}
+
+#bkg2 {
+  background-image: url(../images/2bkg.png);
+  background-size: cover;
+}
+
+#bkg3 {
+  background-image: url(../images/3bkg.jpg);
+  background-size: cover;
+}
+
+#bkg4 {
+  background-image: url(../images/4bkg.jpg);
+  background-size: cover;
+}
+
+#bkg5 {
+  background-image: url(../images/5bkg.jpg);
+  background-size: cover;
+}
+
+#bkg6 {
+  background-image: url(../images/6bkg.jpg);
+  background-size: cover;
+}
+
+@media screen and (min-width: 600px) {
+  #loginBox {
+    width: 600px;
+  }
+}
+@media screen and (min-width: 900px) {
+  #heroImage {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: none;
+  }
+
+  #title {
+    margin-top: 5%;
+  }
+
+  .title {
+    font-size: 6em;
+  }
+}
+header {
+  position: fixed;
+  z-index: 1000;
+  background: #321eb3;
+}
+
+#logo {
+  position: absolute;
+  fill: white;
+  height: 60px;
+  width: 130px;
+  z-index: 1000;
+  padding: 0.3em;
+}
+
+nav {
+  width: 100vw;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: right;
+  margin-right: 5%;
+}
+
+li a {
+  display: block;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+  padding: 18px 16px;
+  text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: #321eb3;
+}
+
+@media screen and (min-width: 900px) {
+  .dashboard {
+    margin-left: 6em;
+  }
+}
+footer {
+  background-color: #321eb3;
+  display: grid;
+  padding: 3%;
+}
+
+#socialMedia {
+  font-size: 1.5em;
+}
+
+#socialMedia {
+  grid-column: 2;
+  align-self: center;
+}
+
+#footerMenu {
+  grid-column: 1/2;
+  grid-row: 1;
+  font-size: 0.8em;
+}
+#footerMenu ul li {
+  float: left;
+}
+
+a:focus,
+a:hover {
+  text-decoration: underline;
+}
+
+form {
+  background-color: white;
+  padding: 2em;
+  grid-column: 3;
+  margin: 0 auto;
+  text-align: center;
+  height: 300px;
+}
+
+input {
+  padding: 0.5em;
+  background-color: #efefef;
+  border-style: none;
+  margin-bottom: 2em;
+}
+
+input {
+  padding: 0.5em;
+  background-color: #efefef;
+  width: 95%;
+  border-style: none;
+  margin-bottom: 2em;
+}
+
+.signText {
+  margin-bottom: 1em;
+}
+
+.mainButton {
+  width: 300px;
+  cursor: pointer;
+  padding: 15px 45px;
+  border-radius: 10px;
+  border: none;
+  color: #321eb3;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: 0.5s;
+  font-size: 1.2em;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+}
+
+.mainButton:hover {
+  background: #321eb3;
+  color: white;
+}
+
+.dashboard {
+  margin: 1em 1em 0 1em;
+  height: 100%;
+}
+
+.movieContent {
+  overflow: hidden;
+  background: #321eb3;
+  height: 280px;
+  transition: all 0.2s ease-in-out;
+  flex: 0 0 auto;
+}
+
+.movieSection {
+  margin-top: 14%;
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+
+.movieSection::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.vidImage {
+  mix-blend-mode: lighten;
+  transition: all 0.2s ease-in-out;
+  transition: 500ms;
+  height: 280px;
+  overflow: hidden;
+}
+
+.vidImage:hover {
+  mix-blend-mode: inherit;
+  cursor: pointer;
+  transform: scale(1.1);
+  z-index: 100;
+}
+
+.slideButton {
+  position: absolute;
+}
+
+.genreTitle, .mediaTitle {
+  color: white;
+}
+
+.mediaTitle {
+  margin-bottom: 3em;
+  grid-column: 2;
+  justify-self: center;
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 800px) {
+  .dashboard {
+    margin: 2em;
+  }
+}
+@media screen and (min-width: 900px) {
+  .dashboard {
+    margin: 0 6em 0 6em;
+  }
+}
+
+/*# sourceMappingURL=master.css.map */
