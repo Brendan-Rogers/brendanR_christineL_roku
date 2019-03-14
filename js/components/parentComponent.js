@@ -128,7 +128,17 @@ export default {
             </li>
         </ul>
     </div>
+    
+    <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
+    </a>
 
+    <a class="twitter-share-button"
+      href="https://twitter.com/intent/tweet?text=I%20love%20Roku%20Flashback%20#RokuFlashback" data-size="large">
+    Tweet</a>
+
+    <div class="fb-share-button" data-href="https://roku-flashback.com/christine/brendan/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froku-flashback.com%2Fchristine%2Fbrendan%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share this Movie!</a></div>
+
+    
 
 </section>
 
