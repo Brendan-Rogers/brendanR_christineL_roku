@@ -1,7 +1,7 @@
 export default {
     template: `
-    <div>    <section class="dashboard">
- 
+    <section class="dashboard">
+
     <ul v-if="activeMediaType == 'video'" class="mediaGenres">
         <li>
             <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
@@ -85,7 +85,6 @@ export default {
             </li>
         </ul>
     </div>
-
 
 </section>
 
