@@ -7,8 +7,10 @@ if (isset($_GET['media'])) {
 
     if ($type == "video") {
         $tbl = "tbl_movies";
-    } else {
+    } else if ($type == 'audio') {
         $tbl = "tbl_audio";
+    } else {
+        $tbl = "tbl_tv";
     }
 }
 
