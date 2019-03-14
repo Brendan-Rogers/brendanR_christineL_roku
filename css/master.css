@@ -9,6 +9,7 @@ body {
   list-style-type: none;
   font-family: "Open Sans", sans-serif;
   background: black;
+  color: white;
 }
 
 .centered {
@@ -252,11 +253,23 @@ input {
 }
 
 .dashboard {
-  margin: 1em 1em 0 1em;
-  height: 100%;
+  margin: 10% 1em 0 1em;
+  display: grid;
+  grid-template-rows: 5em 1fr 1fr 1fr;
+}
+
+#dashboardBox {
+  background: #321eb3;
+}
+
+.infoArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 2%;
 }
 
 .movieContent {
+  grid-column: 4;
   overflow: hidden;
   background: #321eb3;
   height: 280px;
@@ -265,10 +278,10 @@ input {
 }
 
 .movieSection {
-  margin-top: 14%;
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
+  overflow: hidden;
 }
 
 .movieSection::-webkit-scrollbar {
@@ -281,7 +294,6 @@ input {
   transition: all 0.2s ease-in-out;
   transition: 500ms;
   height: 280px;
-  overflow: hidden;
 }
 
 .vidImage:hover {
@@ -291,14 +303,6 @@ input {
   z-index: 100;
 }
 
-.slideButton {
-  position: absolute;
-}
-
-.genreTitle, .mediaTitle {
-  color: white;
-}
-
 .mediaTitle {
   margin-bottom: 3em;
   grid-column: 2;
@@ -306,14 +310,17 @@ input {
   margin-top: 1em;
 }
 
-@media screen and (min-width: 800px) {
-  .dashboard {
-    margin: 2em;
-  }
+.mediaGenres {
+  background: #321eb3;
+  display: grid;
+  grid-row: 1;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  justify-items: center;
 }
+
 @media screen and (min-width: 900px) {
   .dashboard {
-    margin: 0 6em 0 6em;
+    margin: 15% 6em 0 6em;
   }
 }
 
