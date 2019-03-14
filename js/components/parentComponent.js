@@ -44,8 +44,25 @@ export default {
     </div>
 
     <div v-if="activeMediaType == 'television' && retrievedMedia.length > 0">
-
+        <ul class="mediaGenres">
+        <li>
+            <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
+        </li>
+        <li>
+            <a href="comedy" @click.prevent="loadMedia('comedy', null)">Comedy</a>
+        </li>
+        <li>
+            <a href="family" @click.prevent="loadMedia('family', null)">Family</a>
+        </li>
+        <li>
+            <a href="horror" @click.prevent="loadMedia('fantasy', null)">Fantasy</a>
+        </li>
+        <li>
+            <a href="horror" @click.prevent="loadMedia(null, null)">All</a>
+        </li>
+    </ul>    
     </div>
+
     <div id="dashboardBox">
         <div class="movieSection">
 
@@ -57,6 +74,10 @@ export default {
 
                 <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia"
                     :src="'images/audio/' + media.audio_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
+                    class="vidImage">
+
+                <img v-if="activeMediaType == 'television'" v-for="media in retrievedMedia"
+                    :src="'images/tv/' + media.tv_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
                     class="vidImage">
 
             </div>
@@ -74,6 +95,28 @@ export default {
             <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer"
                 class="fs-video"></video>
         </div>
+
+        <div v-if="activeMediaType == 'audio' && retrievedMedia.length > 0" class="infoArea">
+
+            <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.audio_title}}</h3>
+            <p class="mediaDetails" v-html="currentMediaDetails.audio_storyline"></p>
+            <span class="media-year">Released in {{currentMediaDetails.audio_year}}</span>
+            
+            <audio controls :src="'audio/' + currentMediaDetails.audio_src"
+                class="fs-audio"></audio>
+        </div>
+
+        <div v-if="activeMediaType == 'television' && retrievedMedia.length > 0" class="infoArea">
+
+            <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.tv_title}}</h3>
+            <p class="mediaDetails" v-html="currentMediaDetails.tv_storyline"></p>
+            <span class="media-time">{{currentMediaDetails.tv_runtime}}</span>
+            <span class="media-year">Released in {{currentMediaDetails.tv_year}}</span>
+
+            <video autoplay controls muted :src="'tv/' + currentMediaDetails.tv_trailer"
+                class="fs-video"></video>
+        </div>
+
         <div class="mediaNav">
         <ul class="media-type">
             <li v-for="media in mediaTypes" :data-type="media.description" @click="loadMedia(null, media.description)">
@@ -100,7 +143,7 @@ export default {
 
         return {
             // set the default to video -> will get a random video via query on create
-            activeMediaType: "audio",
+            activeMediaType: "video",
 
             // push first (or random) media object here (selected / filtered on create)
             currentMediaDetails: {
