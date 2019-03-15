@@ -8,7 +8,6 @@
 body {
   list-style-type: none;
   font-family: "Open Sans", sans-serif;
-  background: black;
   color: white;
 }
 
@@ -24,7 +23,6 @@ body {
 
 #welcome {
   height: 100vh;
-  position: relative;
   overflow: hidden;
 }
 
@@ -65,6 +63,7 @@ body {
   width: 100%;
   animation: moveUp 40s linear infinite;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 @keyframes moveUp {
@@ -178,6 +177,7 @@ footer {
   background-color: #321eb3;
   display: grid;
   padding: 3%;
+  padding-top: 14em;
 }
 
 #socialMedia {
@@ -253,18 +253,17 @@ input {
 }
 
 .dashboard {
-  margin: 10% 1em 0 1em;
-  display: grid;
-  grid-template-rows: 5em 1fr 1fr 1fr;
-}
-
-#dashboardBox {
+  margin: 1em;
   background: #321eb3;
+  display: grid;
+  z-index: 900;
+  position: absolute;
+  top: 8%;
+  font-size: 0.7em;
 }
 
 .infoArea {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  height: 30em;
   padding: 2%;
 }
 
@@ -281,7 +280,6 @@ input {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  overflow: hidden;
 }
 
 .movieSection::-webkit-scrollbar {
@@ -294,6 +292,7 @@ input {
   transition: all 0.2s ease-in-out;
   transition: 500ms;
   height: 280px;
+  overflow: hidden;
 }
 
 .vidImage:hover {
@@ -304,24 +303,70 @@ input {
 }
 
 .mediaTitle {
-  margin-bottom: 3em;
-  grid-column: 2;
+  margin-bottom: 1em;
   justify-self: center;
   margin-top: 1em;
+  text-align: center;
+}
+
+.yearMovie {
+  text-align: center;
+}
+
+.mediaDetails {
+  padding: 2%;
+  margin-bottom: 2em;
+  height: 5em;
 }
 
 .mediaGenres {
+  height: 7em;
   background: #321eb3;
   display: grid;
-  grid-row: 1;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
+  align-items: center;
+}
+.mediaGenres a {
+  text-decoration: none;
+}
+.mediaGenres a:hover {
+  color: #e951c8;
 }
 
-@media screen and (min-width: 900px) {
-  .dashboard {
-    margin: 15% 6em 0 6em;
-  }
+.fs-video, .fs-audio {
+  display: block;
+  margin: 0 auto;
+}
+
+.mediaNav {
+  z-index: 2000;
+  background: #321eb3;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mediaNav li {
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 1em;
+}
+.mediaNav li :hover {
+  color: white;
+}
+
+#share {
+  height: 3em;
+  display: flex;
+}
+
+.pin {
+  height: 30em;
+  background: blue;
 }
 
 /*# sourceMappingURL=master.css.map */

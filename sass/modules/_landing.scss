@@ -1,7 +1,7 @@
 
 #welcome{
     height:100vh;
-    position:relative;
+    //position:relative;
     overflow: hidden;
 
 
@@ -35,7 +35,7 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
    height:100%;
-   //position:relative;
+
    background-color:$blue;
 
   
@@ -52,6 +52,7 @@
     animation:moveUp 40s linear infinite;
 
     margin: 0 auto;
+    overflow:hidden;
 
   }
   @keyframes moveUp{

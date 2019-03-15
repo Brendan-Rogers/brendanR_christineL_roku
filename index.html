@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>Roku Flashbutt</title>
+  <title>Roku Flashback</title>
   <meta charset="utf-8">
   <!-- link the Stylesheet -->
   <link rel="stylesheet" href="css/master.css">
@@ -17,8 +17,10 @@
 </head>
 
 <body>
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
+
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>
 
   <div id="app">
     <header id="mainHeader">
@@ -33,40 +35,35 @@
         </ul>
       </nav>
     </header>
+    <main>
 
 
 
 
-    <section id="welcome">
-      <!--hero image-->
-
-
-      <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <router-view />
-      </transition>
+      <section id="welcome">
 
 
 
+        <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+          <router-view />
+        </transition>
 
-      <!--background image look up how to hide this with vueeee on dashboard pages-->
+        <!--<div class="overlay"></div>-->
+        <div id="heroImage">
+          <div id="bkg1" class="scroll" data-rate="1.5"></div>
+          <div id="bkg2" class="scroll" data-rate="-1.5"></div>
+          <div id="bkg3" class="scroll" data-rate="1.5"></div>
+          <div id="bkg4" class="scroll" data-rate="-1.5"></div>
+          <div id="bkg5" class="scroll" data-rate="1.5"></div>
+          <div id="bkg6" class="scroll" data-rate="-1.5"></div>
+        </div>
 
 
-      <div class="overlay"></div>
-      <div id="heroImage">
-        <div id="bkg1" class="scroll" data-rate="1.5"></div>
-        <div id="bkg2" class="scroll" data-rate="-1.5"></div>
-        <div id="bkg3" class="scroll" data-rate="1.5"></div>
-        <div id="bkg4" class="scroll" data-rate="-1.5"></div>
-        <div id="bkg5" class="scroll" data-rate="1.5"></div>
-        <div id="bkg6" class="scroll" data-rate="-1.5"></div>
-      </div>
-
-
-    </section>
-
-  </div>
+      </section>
+    </main>
   </div>
   <footer>
+
     <div id="socialMedia">
       <ul>
         <li><a href="https://twitter.com/?lang=en" target="_blank"><i class="fab fa-twitter-square"></i></a></li>
@@ -89,27 +86,23 @@
   </footer>
   </div>
 
-  <script
-    type="text/javascript"
-    async defer
-    src="//assets.pinterest.com/js/pinit.js"
-  > </script>
+  <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"> </script>
 
-  <script>window.twttr = (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0],
-      t = window.twttr || {};
-    if (d.getElementById(id)) return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
+  <script>window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
 
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
 
-    return t;
+      return t;
     }(document, "script", "twitter-wjs"));
   </script>
   <!-- link our main JS code -->
