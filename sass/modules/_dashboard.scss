@@ -2,51 +2,41 @@
 
 .dashboard{
    margin:1em;
-    background:$blue;
-   // height:100%;
-   display:grid;
-  
-  //  grid-template-rows: 5em 1fr 1fr 1fr;
-    //grid-template-columns: 1fr 1fr;
+    //background:rgba(50, 30, 179, 0.90);
+    background:$white;
+    //display:grid;
     z-index:900;
     position: absolute;
     top: 8%;
-   // height:800px;
-    font-size:0.7em; 
-    //border:1px solid white;
-
-
-  
+    font-size:0.7em;   
+    color:$grey;
+    min-width: 200px;
+    
 }
 
 .infoArea{
     height:30em;
     padding:2%;
- 
-
- 
-}
+ }
 
 
 .movieContent{
-grid-column:4;
+    grid-column:4;
     overflow: hidden;
     background:$blue;
     height:280px;
     transition: all .2s ease-in-out; 
     flex:0 0 auto;
- 
-  }
+ }
 
 //genre section container
 
-.movieSection{
 
-   
+.movieSection{
     display: flex;
     flex-wrap: nowrap;
     overflow-x: auto;
-   // overflow:hidden;
+
   }
   .movieSection::-webkit-scrollbar {
     width: 0px;
@@ -56,7 +46,6 @@ grid-column:4;
  
 
 .vidImage{
-
     mix-blend-mode: lighten;
     transition: all .2s ease-in-out; 
     transition: 500ms;
@@ -71,26 +60,23 @@ grid-column:4;
   
 }
 
-//buttons
 
+.audiopic{
 
-
-//text
-
+    height:200px;
+}
 
 
 .mediaTitle{
     margin-bottom:1em;
-  // grid-column: 2;
    justify-self:center;
-   //align-self:center;
    margin-top:1em;
    text-align:center;
 }
 
 .yearMovie{
-  
     text-align: center;
+    margin-bottom:1em;
 }
 
 .mediaDetails{
@@ -99,13 +85,11 @@ grid-column:4;
     height:5em;
 
 }
-
-
-
 .mediaGenres{
- 
+    //color:rgba(255, 255, 255, 0.5)!important;
     height:7em;
-    background:$blue;
+    background:$white;
+    color:$blue !important;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     justify-items:center;
@@ -114,7 +98,8 @@ grid-column:4;
     text-decoration:none;
 }
 a:hover{
-    color:$pink;
+
+    background:none;
 }
 
 }
@@ -122,10 +107,13 @@ a:hover{
 .fs-video, .fs-audio{
    display:block;
    margin:0 auto;
+   justify-self: center;
+  align-self: center;
 }
 
 //bottomNav
 .mediaNav{
+    border-top:0.5px solid white;
     z-index:2000;
     background:$blue;
     overflow: hidden;
@@ -154,17 +142,53 @@ a:hover{
 }
 .pin {
     height:30em;
-    background:blue;
+
 }
 
-@media screen and (min-width:800px){
+@media screen and (min-width:700px){
     .dashboard{
-        //margin:2em;
+        margin:2em;
+        
+    }
+    .infoArea{
+        display:grid;
+        grid-template-columns:50% 50%;
+        
+
+    }
+
+    .mediaDetails{
+        grid-row:2;
+        justify-self: center;
+        align-self: center;
+    }
+    .yearMovie{
+        grid-row:1;
+        margin-bottom:1em;
+        justify-self: center;
+        align-self: center;
     }
     }
 
     @media screen and (min-width:900px){
         .dashboard{
-           // margin:15% 6em 0 6em;
+          margin:3em;
+      
         }
+
+        .infoArea{
+           // grid-column:2;
+        
+        }
+        .fs-video{
+            width:80%;
+     
+        }
+        }
+
+        @media screen and (min-width:1200px){
+            .dashboard{
+            margin:6em;
+              
+            }
         }

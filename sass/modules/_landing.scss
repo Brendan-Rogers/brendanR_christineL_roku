@@ -1,7 +1,6 @@
 
 #welcome{
     height:100vh;
-    //position:relative;
     overflow: hidden;
 
 
@@ -10,23 +9,21 @@
     color:white;
     position: absolute;
     z-index:600;
-    text-align: center;
-     width:100%;
+    //height:300px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    margin-top:-5em !important;
-    margin:0 auto;
-    
-}
+    display:grid;
+   grid-template-columns:1fr 1fr 1fr;
+    grid-template-rows:1fr 1fr 1fr;
+  //  margin-top:-5em;
+ }
 
-#title li {
- float:left;
-}
 
 
 .title{
-    font-size:4em;
- 
+    font-size:5em;
+    float:left;
+    grid-column:2;
 }
 
 
@@ -38,29 +35,33 @@
 
    background-color:$blue;
 
-  
 } 
+
+.bkgArea{
+    height:100%;
+    position:relative;
+    overflow:hidden;
+}
 .overlay{
 
     background-image:url(../images/lines.png); //repeat dosnt want to work, probs just make a line
     position: absolute;
     z-index:600;
     mix-blend-mode:soft-light;
-    height: 3000px;//why not perfect
+    height: 1600px;
     width:100%;
   //  height:100%;
     animation:moveUp 40s linear infinite;
-
-    margin: 0 auto;
     overflow:hidden;
+
 
   }
   @keyframes moveUp{
   	0%{
-  		transform: translate3d(0, 1000, 0);
+  		transform: translate3d(0, 800px, 0);
   	}
   	100%{
-  		transform: translate3d(0, -1000px,0);
+  		transform: translate3d(0, 800px,0);
   	}
   }
 

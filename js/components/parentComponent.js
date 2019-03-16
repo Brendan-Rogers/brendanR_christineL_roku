@@ -74,7 +74,7 @@ export default {
 
                 <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia"
                     :src="'images/audio/' + media.audio_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
-                    class="vidImage">
+                    class="vidImage audiopic">
 
                 <img v-if="activeMediaType == 'television'" v-for="media in retrievedMedia"
                     :src="'images/tv/' + media.tv_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
@@ -89,6 +89,7 @@ export default {
             <span class="yearMovie">
             <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
             <h3 class="media-year"> {{currentMediaDetails.movies_year}}</h3>
+             <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
            </span>
             <p class="mediaDetails" v-html="currentMediaDetails.movies_storyline"></p>
           
@@ -96,7 +97,6 @@ export default {
 
             <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer"
                 class="fs-video"></video>
-                <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
         </div>
 
         <div v-if="activeMediaType == 'audio' && retrievedMedia.length > 0" class="infoArea">

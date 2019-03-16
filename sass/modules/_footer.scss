@@ -1,28 +1,31 @@
 footer{
-    background-color:$blue;
-    display:grid;
+    background:$blue;
     padding:3%;
-    padding-top:14em;
-}    
+    padding-top:10em;
+    height:20em;
+    z-index:400;
+    font-size:0.8em;
+   overflow: hidden;
+   //position:relative;
+}   
+.foot{
+  width: 120px;
+  line-height: 0.5em;
+  text-align:left;
+  float:left;
+  li a{
+      padding:1em;
+ 
+  }
+  
+} 
 
 #socialMedia{
     font-size:1.5em;
 }
 
-#socialMedia {
-    grid-column: 2;
-    align-self: center;
-    
-}
-
 #footerMenu {
-    grid-column: 1 / 2;
-    grid-row:1;
+  
     font-size:0.8em; 
-    
-ul li{
-    float:left;
-}
 
-    
 }

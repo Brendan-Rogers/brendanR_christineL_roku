@@ -47,17 +47,17 @@
         <transition name="fade" enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
           <router-view />
         </transition>
-
-        <!--<div class="overlay"></div>-->
-        <div id="heroImage">
-          <div id="bkg1" class="scroll" data-rate="1.5"></div>
-          <div id="bkg2" class="scroll" data-rate="-1.5"></div>
-          <div id="bkg3" class="scroll" data-rate="1.5"></div>
-          <div id="bkg4" class="scroll" data-rate="-1.5"></div>
-          <div id="bkg5" class="scroll" data-rate="1.5"></div>
-          <div id="bkg6" class="scroll" data-rate="-1.5"></div>
-        </div>
-
+        <span class="bkgArea">
+          <div class="overlay"></div>
+          <div id="heroImage">
+            <div id="bkg1" class="scroll" data-rate="1.5"></div>
+            <div id="bkg2" class="scroll" data-rate="-1.5"></div>
+            <div id="bkg3" class="scroll" data-rate="1.5"></div>
+            <div id="bkg4" class="scroll" data-rate="-1.5"></div>
+            <div id="bkg5" class="scroll" data-rate="1.5"></div>
+            <div id="bkg6" class="scroll" data-rate="-1.5"></div>
+          </div>
+        </span>
 
       </section>
     </main>
@@ -74,13 +74,18 @@
 
 
     <div id="footerMenu">
-      <ul>
+      <ul class="foot">
         <li><a href="#">Legal Notice</a></li>
         <li><a href="#">Terms of Use</a></li>
         <li><a href="#">Privacy</a></li>
         <li><a href="#">Cookie Preference</a></li>
       </ul>
-    </div>
+      <ul class="foot">
+        <li><a href="#">Help Center</a></li>
+        <li><a href="#">Media Center</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Corporate Information</a></li>
+      </ul>
 
 
   </footer>
