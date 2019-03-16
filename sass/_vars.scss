@@ -5,6 +5,8 @@ $mainFont: 'Open Sans', sans-serif;
 
 $blue: #321eb3;
 $pink: #e951c8;
+$grey:rgb(29, 29, 29);
+$white:rgb(240, 240, 240);
 
 @mixin vertical-align($position: relative) {
     position: $position;
@@ -13,3 +15,4 @@ $pink: #e951c8;
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
 }
+

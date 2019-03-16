@@ -1,5 +1,5 @@
 export default {
-    template: `
+  template: `
 
        
     <div class="selectTemplate centered">
@@ -17,7 +17,7 @@ export default {
 
           
         <router-link :to="{name: 'parentDashboard'}">
-        <button id="loginButton" class="mainButton">parent</button>
+        <button id="loginButton account" class="mainButton">parent</button>
         </router-link>
 
         <router-link :to="{name: 'dashboard'}">

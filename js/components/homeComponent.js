@@ -9,7 +9,7 @@ export default {
     <li class="title">TV</li>
   
     <router-link :to="{name: 'login'}">
-    <button class="mainButton foo bar" id="loginButton">Login</button>
+    <button class="mainButton" id="firstButton">Login</button>
     </router-link>
     </div>
 

@@ -1,7 +1,7 @@
 export default {
     template: `
     <div>    <section class="dashboard">
- 
+    <div id="dashboardBox">
     <ul v-if="activeMediaType == 'video'" class="mediaGenres">
         <li>
             <a href="action" @click.prevent="loadMedia('action', null)">Action</a>
@@ -23,9 +23,9 @@ export default {
 
     <div v-if="activeMediaType == 'audio' && retrievedMedia.length > 0">
 
-        <ul  class="mediaGenres">
+        <ul class="mediaGenres">
             <li>
-                <a href="action" @click.prevent="loadMedia('alternative', null)">Alternative</a>
+                <a href="action" @click.prevent="loadMedia('alternative', null)">Alt</a>
             </li>
             <li>
                 <a href="comedy" @click.prevent="loadMedia('blues', null)">Blues</a>
@@ -34,7 +34,7 @@ export default {
                 <a href="family" @click.prevent="loadMedia('rock', null)">Rock</a>
             </li>
             <li>
-                <a href="horror" @click.prevent="loadMedia('soundtrack', null)">Soundtracks</a>
+                <a href="horror" @click.prevent="loadMedia('soundtrack', null)">Sound<br>tracks</a>
             </li>
             <li>
                 <a href="horror" @click.prevent="loadMedia(null, 'audio')">All</a>
@@ -63,7 +63,7 @@ export default {
     </ul>    
     </div>
 
-    <div id="dashboardBox">
+   
         <div class="movieSection">
 
             <div class="movieContent">
@@ -74,7 +74,7 @@ export default {
 
                 <img v-if="activeMediaType == 'audio'" v-for="media in retrievedMedia"
                     :src="'images/audio/' + media.audio_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
-                    class="vidImage">
+                    class="vidImage audiopic">
 
                 <img v-if="activeMediaType == 'television'" v-for="media in retrievedMedia"
                     :src="'images/tv/' + media.tv_cover" alt="media thumb" @mouseover="switchActiveMedia(media)"
@@ -86,21 +86,26 @@ export default {
         </div>
 
         <div v-if="activeMediaType == 'video' && retrievedMedia.length > 0" class="infoArea">
-
+            <span class="yearMovie">
             <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.movies_title}}</h3>
+            <h3 class="media-year"> {{currentMediaDetails.movies_year}}</h3>
+             <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
+           </span>
             <p class="mediaDetails" v-html="currentMediaDetails.movies_storyline"></p>
-            <span class="media-time">{{currentMediaDetails.movies_runtime}}</span>
-            <span class="media-year">Released in {{currentMediaDetails.movies_year}}</span>
+          
+           
 
             <video autoplay controls muted :src="'video/' + currentMediaDetails.movies_trailer"
                 class="fs-video"></video>
         </div>
 
         <div v-if="activeMediaType == 'audio' && retrievedMedia.length > 0" class="infoArea">
-
+        <span class="yearMovie">
             <h3 class="mediaTitle" @mouseover>{{currentMediaDetails.audio_title}}</h3>
+            <h3 class="media-year">Released in {{currentMediaDetails.audio_year}}</h3>
+        </span>
             <p class="mediaDetails" v-html="currentMediaDetails.audio_storyline"></p>
-            <span class="media-year">Released in {{currentMediaDetails.audio_year}}</span>
+            
             
             <audio controls :src="'audio/' + currentMediaDetails.audio_src"
                 class="fs-audio"></audio>
@@ -117,7 +122,22 @@ export default {
                 class="fs-video"></video>
         </div>
 
-        <div class="mediaNav">
+        
+    <div id="share">
+    <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark" data-size="large">
+    </a>
+
+    <a class="twitter-share-button"
+      href="https://twitter.com/intent/tweet?text=I%20love%20Roku%20Flashback%20#RokuFlashback" data-size="large">
+    Tweet</a>
+
+    <div class="fb-share-button" data-href="https://roku-flashback.com/christine/brendan/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froku-flashback.com%2Fchristine%2Fbrendan%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share this Movie!</a></div>
+</div>
+    
+
+</section>
+
+<div class="mediaNav">
         <ul class="media-type">
             <li v-for="media in mediaTypes" :data-type="media.description" @click="loadMedia(null, media.description)">
                 <span>
@@ -128,21 +148,8 @@ export default {
             </li>
         </ul>
     </div>
-    
-    <a href="https://www.pinterest.com/pin/create/button/" data-pin-do="buttonBookmark">
-    </a>
 
-    <a class="twitter-share-button"
-      href="https://twitter.com/intent/tweet?text=I%20love%20Roku%20Flashback%20#RokuFlashback" data-size="large">
-    Tweet</a>
-
-    <div class="fb-share-button" data-href="https://roku-flashback.com/christine/brendan/" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Froku-flashback.com%2Fchristine%2Fbrendan%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share this Movie!</a></div>
-
-    
-
-</section>
-
-
+</div>
 
      `,
 
@@ -162,9 +169,9 @@ export default {
 
             // could add more media types here in future
             mediaTypes: [
-                { iconClass: "fas fa-headphones", description: "audio" },
-                { iconClass: "fas fa-film", description: "video" },
-                { iconClass: "fas fa-tv", description: "television" }
+                { iconClass: "", description: "audio" },
+                { iconClass: "", description: "video" },
+                { iconClass: "", description: "television" }
             ],
 
             retrievedMedia: [],

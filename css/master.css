@@ -5,11 +5,13 @@
   padding: 0;
 }
 
+main {
+  position: relative;
+}
+
 body {
   list-style-type: none;
   font-family: "Open Sans", sans-serif;
-  background: black;
-  color: white;
 }
 
 .centered {
@@ -24,7 +26,6 @@ body {
 
 #welcome {
   height: 100vh;
-  position: relative;
   overflow: hidden;
 }
 
@@ -32,20 +33,17 @@ body {
   color: white;
   position: absolute;
   z-index: 600;
-  text-align: center;
-  width: 100%;
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  margin-top: -5em !important;
-  margin: 0 auto;
-}
-
-#title li {
-  float: left;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
 }
 
 .title {
-  font-size: 4em;
+  font-size: 5em;
+  float: left;
+  grid-column: 2;
 }
 
 #heroImage {
@@ -56,23 +54,29 @@ body {
   background-color: #321eb3;
 }
 
+.bkgArea {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
 .overlay {
   background-image: url(../images/lines.png);
   position: absolute;
   z-index: 600;
   mix-blend-mode: soft-light;
-  height: 3000px;
+  height: 1600px;
   width: 100%;
   animation: moveUp 40s linear infinite;
-  margin: 0 auto;
+  overflow: hidden;
 }
 
 @keyframes moveUp {
   0% {
-    transform: translate3d(0, 1000, 0);
+    transform: translate3d(0, 800px, 0);
   }
   100% {
-    transform: translate3d(0, -1000px, 0);
+    transform: translate3d(0, 800px, 0);
   }
 }
 #bkg1 {
@@ -175,27 +179,31 @@ li a:hover {
   }
 }
 footer {
-  background-color: #321eb3;
-  display: grid;
+  background: #321eb3;
   padding: 3%;
+  padding-top: 10em;
+  height: 20em;
+  z-index: 400;
+  font-size: 0.8em;
+  overflow: hidden;
+}
+
+.foot {
+  width: 120px;
+  line-height: 0.5em;
+  text-align: left;
+  float: left;
+}
+.foot li a {
+  padding: 1em;
 }
 
 #socialMedia {
   font-size: 1.5em;
 }
 
-#socialMedia {
-  grid-column: 2;
-  align-self: center;
-}
-
 #footerMenu {
-  grid-column: 1/2;
-  grid-row: 1;
   font-size: 0.8em;
-}
-#footerMenu ul li {
-  float: left;
 }
 
 a:focus,
@@ -229,6 +237,11 @@ input {
 
 .signText {
   margin-bottom: 1em;
+  color: #323232;
+}
+
+#account {
+  color: Red;
 }
 
 .mainButton {
@@ -245,6 +258,27 @@ input {
   font-size: 1.2em;
   background-color: rgba(255, 255, 255, 0.8);
   position: relative;
+  border: 2px solid #321eb3;
+  margin-bottom: 1em;
+}
+
+#firstButton {
+  width: 200px;
+  cursor: pointer;
+  padding: 15px 45px;
+  border-radius: 10px;
+  border: none;
+  color: #321eb3;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-sizing: border-box;
+  transition: 0.5s;
+  font-size: 1.2em;
+  background-color: rgba(255, 255, 255, 0.8);
+  position: relative;
+  position: absolute;
+  left: 150px;
+  bottom: 5px;
 }
 
 .mainButton:hover {
@@ -253,18 +287,18 @@ input {
 }
 
 .dashboard {
-  margin: 10% 1em 0 1em;
-  display: grid;
-  grid-template-rows: 5em 1fr 1fr 1fr;
-}
-
-#dashboardBox {
-  background: #321eb3;
+  margin: 1em;
+  background: #f0f0f0;
+  z-index: 900;
+  position: absolute;
+  top: 8%;
+  font-size: 0.7em;
+  color: #1d1d1d;
+  min-width: 200px;
 }
 
 .infoArea {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  height: 30em;
   padding: 2%;
 }
 
@@ -281,7 +315,6 @@ input {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  overflow: hidden;
 }
 
 .movieSection::-webkit-scrollbar {
@@ -294,6 +327,7 @@ input {
   transition: all 0.2s ease-in-out;
   transition: 500ms;
   height: 280px;
+  overflow: hidden;
 }
 
 .vidImage:hover {
@@ -303,24 +337,116 @@ input {
   z-index: 100;
 }
 
+.audiopic {
+  height: 200px;
+}
+
 .mediaTitle {
-  margin-bottom: 3em;
-  grid-column: 2;
+  margin-bottom: 1em;
   justify-self: center;
   margin-top: 1em;
+  text-align: center;
+}
+
+.yearMovie {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.mediaDetails {
+  padding: 2%;
+  margin-bottom: 2em;
+  height: 5em;
 }
 
 .mediaGenres {
-  background: #321eb3;
+  height: 7em;
+  background: #f0f0f0;
+  color: #321eb3 !important;
   display: grid;
-  grid-row: 1;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   justify-items: center;
+  align-items: center;
+}
+.mediaGenres a {
+  text-decoration: none;
+}
+.mediaGenres a:hover {
+  background: none;
 }
 
+.fs-video, .fs-audio {
+  display: block;
+  margin: 0 auto;
+  justify-self: center;
+  align-self: center;
+}
+
+.mediaNav {
+  border-top: 0.5px solid white;
+  z-index: 2000;
+  background: #321eb3;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  cursor: pointer;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.mediaNav li {
+  text-align: center;
+  padding: 14px 16px;
+  font-size: 1em;
+}
+.mediaNav li :hover {
+  color: white;
+}
+
+#share {
+  height: 3em;
+  display: flex;
+}
+
+.pin {
+  height: 30em;
+}
+
+@media screen and (min-width: 700px) {
+  .dashboard {
+    margin: 2em;
+  }
+
+  .infoArea {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .mediaDetails {
+    grid-row: 2;
+    justify-self: center;
+    align-self: center;
+  }
+
+  .yearMovie {
+    grid-row: 1;
+    margin-bottom: 1em;
+    justify-self: center;
+    align-self: center;
+  }
+}
 @media screen and (min-width: 900px) {
   .dashboard {
-    margin: 15% 6em 0 6em;
+    margin: 3em;
+  }
+
+  .fs-video {
+    width: 80%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dashboard {
+    margin: 6em;
   }
 }
 
